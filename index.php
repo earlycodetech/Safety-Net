@@ -12,4 +12,4 @@
         <?php include 'assets/includes/main-nav.php' ?>
     </section>
 </body>
-</html>
+</html> 

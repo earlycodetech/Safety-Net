@@ -13,7 +13,7 @@
           <a class="nav-link active" aria-current="page" href="tel:08142237388">08142237388</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Register</a>
+          <a class="nav-link active" href="registration">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="#">Login</a>
