@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safety Net</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fontawsome/css/all.css">
 </head>
 <body>
   <?php include 'assets/includes/main-nav.php'; ?>
@@ -58,13 +59,27 @@
                     <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-warning fs-6 py-2 fw-bolder">Password:</label>
                         <div class="col-sm-9">
-                          <input type="password" name="pass" class="form-control bg-warning mb-3 px-3">
+                          <div class="row">
+                            <div class="col-11">
+                              <input type="password" name="pass" class="form-control bg-warning mb-3 px-3" id="pass">
+                            </div>
+                            <div class="col-1">
+                                <i class="fas fa-eye text-primary" id="show"></i>
+                            </div>
+                          </div>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-warning fs-6 py-2 fw-bolder">Comfirm Password:</label>
                         <div class="col-sm-9">
-                          <input type="password" name="conpass" class="form-control bg-warning mb-3 px-3">
+                            <div class="row">
+                                <div class="col-11">
+                                  <input type="password" name="conpass" class="form-control bg-warning mb-3 px-3" id="pass1">
+                                </div>
+                                <div class="col-1">
+                                    <i class="fas fa-eye text-primary" id="show1"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

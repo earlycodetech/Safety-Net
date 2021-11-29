@@ -11,5 +11,8 @@
     <section>
         <?php include 'assets/includes/main-nav.php' ?>
     </section>
+
+
+    <?php include 'assets/includes/footer.php' ?>
 </body>
 </html> 
