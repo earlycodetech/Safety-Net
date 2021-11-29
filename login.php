@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/bootstrap_css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <title>Safety-Net Login Page</title>
 
     <style>
@@ -23,6 +23,21 @@
         img {
             margin-left: 30px;
         }
+        button {
+            border-radius: 25px !important;
+            font-weight: bold !important;
+        }
+        input {
+            border-radius: 10px !important;
+        }
+        h1 {
+            font-size: 23px !important;
+            font-weight: bold !important;
+        }
+        footer p {
+            font-weight: bold;
+        }
+        
         @media (max-width: 650px) {
             button {
                 width: 80px !important;
@@ -41,8 +56,8 @@
             <label for="email">Email:</label>
             <input style="margin-left: 54px;" class="form-control w-25 d-inline border-0" type="text" name="name"> <br>
             <label for="password" name="password">Password:</label>
-            <input class="ml-5 form-control w-25 d-inline mx-4 mt-3 border-0" type="password"> <br><br>
-            <button style="width: 120px; margin-left: 105px;" class=" btn text-light rounded-pill my-3">Login</button>
+            <input class="ml-3 form-control w-25 d-inline mx-4 mt-3 border-0" type="password"> <br><br>
+            <button style="width: 120px; margin-left: 105px;" class="btn text-light rounded-pill my-3">Login</button>
         </form>
     </section>  
 </body>
