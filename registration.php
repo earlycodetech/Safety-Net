@@ -1,3 +1,4 @@
+<?php include 'assets/includes/sessions.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,10 @@
 <body>
   <?php include 'assets/includes/main-nav.php'; ?>
     <div class="container">
+
+      <?php echo errorMessage();
+        
+        ?>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6">
                 <form action="assets/controls/reg_control.php" method="POST" class="mt-4 p-3">

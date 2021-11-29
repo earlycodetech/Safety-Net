@@ -25,7 +25,7 @@
     <!-- preloader area end -->
     <!-- page container area start -->
     <div class="page-container">
-  <?php include 'assets/includes/dashboard_nav.php' ?>
+  <?php include 'assets/includes/dashbord_nav.php' ?>
             <div class="main-content-inner">
 
             </div>
