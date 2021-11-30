@@ -2,15 +2,15 @@
       <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="#"><img src="assets/img/logo.png" alt="logo" height="40px"></a>
+                    <a href="dashboard"><img src="../assets/img/logo.png" alt="logo" height="40px"></a>
                 </div>
             </div>
             <div class="main-menu">
                 <div class="menu-inner">
                     <nav>
                         <ul class="metismenu" id="menu">
-                            <li class="nav-link">
-                                <a href="#" aria-expanded="true">
+                            <li class="nav-link ">
+                                <a href="dashboard">
                                     <i class="fas fa-tachometer-alt"></i>
                                     <span>dashboard</span>
                                 </a>
