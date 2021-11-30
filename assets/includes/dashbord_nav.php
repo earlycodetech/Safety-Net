@@ -2,7 +2,7 @@
       <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="#"><img src="assets/img/logo.png" alt="logo" height="40px"></a>
+                    <a href="dashboard"><img src="../assets/img/logo.png" alt="logo" height="40px"></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -10,7 +10,7 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li class="nav-link">
-                                <a href="#" aria-expanded="true">
+                                <a href="dashboard" aria-expanded="true">
                                     <i class="fas fa-tachometer-alt"></i>
                                     <span>dashboard</span>
                                 </a>
