@@ -36,7 +36,7 @@
 </head>
 <body>
     <header style="height: 60px;">
-        <a class="navbar-brand d-flex align-items-center" href="#">
+        <a class="navbar-brand d-flex align-items-center" href="homepage.php">
             <img width="50" height="50" src="assets/img/logo.png" alt="logo">
             <h1 class="text-light fs-4">Safety Net</h1>
         </a>
@@ -54,7 +54,7 @@
 </body>
 
 <footer style="height: 100px" class="d-flex">
-    <a href="#"><img class="my-2" width="80" height="80" src="assets/img/logo.png" alt="logo"></a>
+    <a href="homepage.php"><img class="my-2" width="80" height="80" src="assets/img/logo.png" alt="logo"></a>
     <p class="fw-bold text-light mx-auto d-block my-5">Copyright &copy; 2021 Safety Net</p>
 </footer>
 </html>
