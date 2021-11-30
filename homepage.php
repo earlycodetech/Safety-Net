@@ -88,7 +88,7 @@
             <div class="container-fluid d-flex align-items-center">
                 <a class="navbar-brand d-flex align-items-center" href="#">
                     <img width="50" height="50" src="assets/img/logo.png" alt="logo">
-                    <h1 class="text-light fs-4">Safety-Net</h1>
+                    <h1 class="text-light fs-4">Safety Net</h1>
                 </a>
                 
                 <ul class="ul navbar-nav d-flex mx-2">
@@ -123,7 +123,7 @@
         <div class="navbar-brand mt-4 ">
             <a class="navbar-brand footer-navbar-brand" href="#">
                 <img width="80" height="80" src="assets/img/logo.png" alt="logo">
-                <h1 class="footer-h1 text-light mt-3 mx-3 fs-4">Safety-Net</h1>  
+                <h1 class="footer-h1 text-light mt-3 mx-3 fs-4">Safety Net</h1>  
             </a>
         </div>
     
