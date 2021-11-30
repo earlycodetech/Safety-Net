@@ -8,6 +8,7 @@
     <title>Safety Net</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fontawsome/css/all.css">
+    <link rel="icon" href="assets/img/logo.png">
 </head>
 <body>
   <?php include 'assets/includes/main-nav.php'; ?>

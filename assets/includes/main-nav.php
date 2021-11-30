@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F68D41;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index">
         <img src="assets/img/logo.png" alt="logo" height="40px">
         <span class="text-light fw-bold">Safety Net</span>
     </a>
@@ -16,7 +16,7 @@
           <a class="nav-link text-light fw-bold" href="registration">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light fw-bold" href="#">Login</a>
+          <a class="nav-link text-light fw-bold" href="login">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light fw-bold" href="#">Contact Us</a>
