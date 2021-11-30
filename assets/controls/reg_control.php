@@ -45,7 +45,8 @@
             $execute = mysqli_stmt_execute($stmt);
 
             if ($execute) {
-                header('Location: ../../index');
+                $_SESSION['successmessage'] = 'Signup successfull please log in';
+                header('Location: ../../login');
             }
             else{
                 $_SESSION['errormessage'] = 'Something went wrong';

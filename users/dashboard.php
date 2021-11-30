@@ -1,3 +1,26 @@
+<?php
+     include '../assets/includes/db_con.php';
+     include '../assets/includes/sessions.php';
+        
+     auth();
+
+     $id = $_SESSION['id'];
+    /*
+        For Select 
+            Init
+            prepare
+            execute
+            get_result
+            fetch_assoc
+    */
+     $sql = "SELECT * FROM users WHERE id= '$id'";
+     $stmt = mysqli_stmt_init($connect);
+     mysqli_stmt_prepare($stmt,$sql);
+     mysqli_stmt_execute($stmt);
+     $result = mysqli_stmt_get_result($stmt);
+     $row = mysqli_fetch_assoc($result);
+
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -25,6 +48,14 @@
     .profpic{
         width: 100px;
         height: 100px;
+        margin-left: 200px;
+        border-radius: 50%;
+    }
+
+    @media (max-width:640px){
+        .profpic{
+            margin-left: 20px;
+        }
     }
 </style>
 <body>
@@ -37,13 +68,16 @@
     <div class="page-container">
   <?php include '../assets/includes/dashbord_nav.php' ?>
             <div class="main-content-inner">
+                
             <div class="container">
-                    <h4 class="text-center fw-bold position-relative text-danger">Welcome to your dashboard</h4>
+                   
+            
+            <?php echo successMessage(); ?>
 
                     <!-- Row of prof pic start--> 
-                    <div class="row">
+                    <div class="row mt-5">
                         <div class="col-6"></div>
-                        <div class="col-6 rounded-circle">
+                        <div class="col-6 my-4">
                             <img src="../assets/img/profpic/user.png" alt="prof"class="shadow-lg profpic">
                         </div>
                     </div>
@@ -58,7 +92,7 @@
                                     <img src="../assets/img/logo.png" alt="logo" class="w-25">
                                     <h5 class="fw-bolder fs-6">Current Ballance</h5>
                                 </div>
-                                <h4 class="pt-2 text-center fw-bold">₦ 100000</h4>
+                                <h4 class="pt-2 text-center fw-bold">₦ <?php echo $row['balance']; ?></h4>
                             </div>
                         </div>
                         <div class="col-md-3 col-6">
@@ -67,7 +101,7 @@
                                     <img src="../assets/img/logo.png" alt="logo" class="w-25">
                                     <h5 class="fw-bolder fs-6">Total Withdrawal</h5>
                                 </div>
-                                <h4 class="pt-2 text-center fw-bold">₦ 100000</h4>
+                                <h4 class="pt-2 text-center fw-bold">₦ <?php echo $row['withdrawals']; ?></h4>
                             </div>
                         </div>
 
@@ -80,56 +114,56 @@
                                 First Name:
                             </div>
                             <div class="col-9 fw-bold mb-3 pt-2 border rounded border-warning">
-                                John
+                                <?php echo $row['first_name']; ?>
                             </div>
                             <!--  -->
                             <div class="col-3 fw-bold text-warning mb-3">
                                 Last Name:
                             </div>
                             <div class="col-9 fw-bold pt-2 mb-3 border rounded border-warning">
-                                Solomon
+                                <?php echo $row['last_name']; ?>
                             </div>
                             <!--  -->
                             <div class="col-3 fw-bold text-warning mb-3">
                                 Other Names:
                             </div>
                             <div class="col-9 fw-bold pt-2 mb-3 border rounded border-warning">
-                                Sylvester
+                                <?php echo $row['other_name']; ?>
                             </div>
                             <!--  -->
                             <div class="col-3 fw-bold text-warning mb-3">
                                 Email:
                             </div>
                             <div class="col-9 fw-bold pt-2 mb-3 border rounded border-warning">
-                                example@ok.com
+                                <?php echo $row['email']; ?>
                             </div>
                             <!--    -->
                             <div class="col-3 fw-bold text-warning mb-3">
                                 D.O.B:
                             </div>
                             <div class="col-9 fw-bold pt-2 mb-3 border rounded border-warning">
-                                12-12-2021
+                                <?php echo $row['dob']; ?>
                             </div>
                             <!--  -->
                             <div class="col-3 fw-bold text-warning mb-3">
                                 State:
                             </div>
                             <div class="col-9 fw-bold pt-2 mb-3 border rounded border-warning">
-                                Delta State
+                                <?php echo $row['states']; ?>
                             </div>
                             <!--  -->
                             <div class="col-3 fw-bold text-warning mb-3">
                                 Phone:
                             </div>
                             <div class="col-9 fw-bold pt-2 mb-3 border rounded border-warning">
-                                08152436355
+                                <?php echo $row['phone']; ?>
                             </div>
                             <!--  -->
                             <div class="col-3 fw-bold text-warning mb-3">
                                 Reg Date:
                             </div>
                             <div class="col-9 fw-bold pt-2 mb-3 border rounded border-warning">
-                                12-12-2021
+                                <?php echo $row['date_created']; ?>
                             </div>
                         </div>
                     </div>

@@ -48,7 +48,7 @@
                             </li>
 
                             <li class="nav-link">
-                                <a href="#" aria-expanded="true"><i class=""></i>
+                                <a href="../assets/controls/logout_control.php" aria-expanded="true"><i class=""></i>
                                     <i class="fas fa-sign-out-alt"></i>
                                     <span>Log out</span>
                                 </a>
