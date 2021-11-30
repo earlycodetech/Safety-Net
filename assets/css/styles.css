@@ -129,7 +129,11 @@
 }
 
 .menu-inner {
+<<<<<<< HEAD
     overflow-y: scroll;
+=======
+    overflow-y: hidden;
+>>>>>>> master
     height: 100%;
 }
 

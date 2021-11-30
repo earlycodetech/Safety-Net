@@ -27,11 +27,15 @@
        
 
         // check if password and confirm password are the same
+<<<<<<< HEAD
        if ($_POST['email'] != $_POST['email'] ) {
             $_SESSION['errormessage'] = 'Email already exists';
             header('Location: ../../registration');
        }
        elseif($_POST['pass'] != $_POST['conpass']) {
+=======
+       if ($_POST['pass'] != $_POST['conpass']) {
+>>>>>>> master
             $_SESSION['errormessage'] = 'Passwords do not match';
             header('Location: ../../registration');
        }
@@ -49,7 +53,12 @@
             $execute = mysqli_stmt_execute($stmt);
 
             if ($execute) {
+<<<<<<< HEAD
                 header('Location: ../../index');
+=======
+                $_SESSION['successmessage'] = 'Signup successfull please log in';
+                header('Location: ../../login');
+>>>>>>> master
             }
             else{
                 $_SESSION['errormessage'] = 'Something went wrong';

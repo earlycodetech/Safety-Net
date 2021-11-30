@@ -1,3 +1,5 @@
+<?php include 'assets/includes/sessions.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +15,7 @@
         <?php include 'assets/includes/main-nav.php'; ?>
 
     <section style="background-image: url(assets/img/bg-1.jpg); background-size: cover; height: 700px; background-position: center;">
+<<<<<<< HEAD
         <form style="padding-top: 130px;" class="d-block mx-3" action="" method="post">
         <div class="row">
             <div class="col-3 my-3">
@@ -34,6 +37,30 @@
                 <button  class="fw-bold btn text-light rounded-pill my-3">Login</button>
             </div>
         </div>
+=======
+            <?php echo successMessage(); echo errorMessage(); ?>
+        <form style="padding-top: 130px;" class="d-block mx-3" action="assets/controls/login_control.php" method="post">
+            <div class="row">
+                <div class="col-3 my-3">
+                    <label class="fw-bold" for="email">Email:</label>
+                </div>
+                <div class="col-9 my-3">
+                    <input class="form-control w-50 d-inline bg-warning" type="text" name="email"> 
+                </div>
+
+                <div class="col-3 my-3">
+                    <label class="fw-bold" for="email">Password:</label>
+                </div>
+                <div class="col-9 my-3">
+                    <input class="form-control w-50 d-inline bg-warning" type="password" name="password" id="pass"> 
+                    <i class="fas fa-eye text-primary" id="show"></i>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-12 my-3">
+                    <button type="submit" name="login" class="fw-bold btn btn-warning text-light rounded-pill my-3">Login</button>
+                </div>
+            </div>
+>>>>>>> master
            
             
           
