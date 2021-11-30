@@ -27,7 +27,11 @@
        
 
         // check if password and confirm password are the same
-       if ($_POST['pass'] != $_POST['conpass']) {
+       if ($_POST['email'] != $_POST['email'] ) {
+            $_SESSION['errormessage'] = 'Email already exists';
+            header('Location: ../../registration');
+       }
+       elseif($_POST['pass'] != $_POST['conpass']) {
             $_SESSION['errormessage'] = 'Passwords do not match';
             header('Location: ../../registration');
        }

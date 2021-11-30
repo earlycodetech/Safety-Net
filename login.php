@@ -10,16 +10,7 @@
     <link rel="icon" href="assets/img/logo.png">
 </head>
 <body>
-<<<<<<< HEAD
-    <header style="height: 60px;">
-        <a class="navbar-brand d-flex align-items-center" href="homepage.php">
-            <img width="50" height="50" src="assets/img/logo.png" alt="logo">
-            <h1 class="text-light fs-4">Safety Net</h1>
-        </a>
-    </header>
-=======
         <?php include 'assets/includes/main-nav.php'; ?>
->>>>>>> origin/master
 
     <section style="background-image: url(assets/img/bg-1.jpg); background-size: cover; height: 700px; background-position: center;">
         <form style="padding-top: 130px;" class="d-block mx-3" action="" method="post">
@@ -55,13 +46,6 @@
     </section>  
 </body>
 
-<<<<<<< HEAD
-<footer style="height: 100px" class="d-flex">
-    <a href="homepage.php"><img class="my-2" width="80" height="80" src="assets/img/logo.png" alt="logo"></a>
-    <p class="fw-bold text-light mx-auto d-block my-5">Copyright &copy; 2021 Safety Net</p>
-</footer>
-=======
->>>>>>> origin/master
 </html>
 
 
