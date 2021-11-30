@@ -9,8 +9,8 @@
                 <div class="menu-inner">
                     <nav>
                         <ul class="metismenu" id="menu">
-                            <li class="nav-link ">
-                                <a href="dashboard">
+                            <li class="nav-link">
+                                <a href="dashboard" aria-expanded="true">
                                     <i class="fas fa-tachometer-alt"></i>
                                     <span>dashboard</span>
                                 </a>
