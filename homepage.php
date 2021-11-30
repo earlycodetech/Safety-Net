@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap5.min.css">
     <title>Safety-Net Home Page</title>
 
     <style>
@@ -28,20 +28,12 @@
         .section-p {
             color: crimson !important;
             font-size: 18px;
-            margin-top: 0;
-            max-width: 260px !important; 
-            margin-left: 60px !important;  
+            margin-top: 0;    
         } 
         img {
             margin-left: 30px;
         } 
-        li, a, h3, p {
-            font-weight: bold !important;
-        }
-        a {
-            border-radius: 25px !important;
-        }
-
+        
         @media  (max-width: 700px) {
             a {
                 width: auto !important;
@@ -68,12 +60,12 @@
                 display: flex !important;
                 flex-direction: column !important;
             }
-            .footer-img-div {
+            .footer-navbar-brand {
                 display: flex !important;
                 justify-content: center !important;
                 margin-bottom: 40px !important;
             }
-            .footer-h3 {
+            .footer-h1 {
                 position: relative !important;
                 top: 35px !important;
                 right: 30px;
@@ -87,45 +79,39 @@
             footer .div-p {
                 margin-right: auto;
             }
-            span {
-                position: absolute !important;
-                right: 170px !important;
-            }
         }
-
-       
     </style>
 </head>
 <body>
     <header class="fw-bold">
-        <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-                <img width="50" height="50" src="assets/img/logo.png" alt="logo">
-                <h1 style="font-size: 23px;" class="text-light fs-6">Safety-Net</h1>
-            </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid d-flex align-items-center">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img width="50" height="50" src="assets/img/logo.png" alt="logo">
+                    <h1 class="text-light fs-4">Safety-Net</h1>
+                </a>
                 
                 <ul class="ul navbar-nav d-flex mx-2">
-                    <li class="header-li nav-item nav-link text-light mx-4">08135546577</li>
-                    <li class="nav-item"><a href="login.php" class="nav-link text-light">Login</a></li>
-                    <li class="nav-item"><a href="registration.php" class="header-li nav-link text-light mx-4">Register</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-light">Contact Us</a></li>
+                    <li class="header-li nav-item nav-link text-light mx-4 active">08135546577</li>
+                    <li class="nav-item"><a href="login.php" class="nav-link text-light active">Login</a></li>
+                    <li class="nav-item"><a href="registration.php" class="header-li nav-link text-light mx-4 active">Register</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-light active">Contact Us</a></li>
                 </ul>
-      
             </div>
         </nav>
     </header>
 
     <section>
-        <div style="padding: 170px 60px; max-width: 500px;" class="section-div section-div1 text-center d-block">
+        <div style="padding: 170px 60px; max-width: 450px;" class="section-div section-div1 text-center d-block">
             <h3 class="text-warning fw-bold mt-3 my-0 fs-4"><u>SAVE WITH BRAND NAME</u></h3>
-            <p class="mx-5 section-p fw-bold"><u>The Financial Friend Everyone Needs</u></p>
-            <a href="#" style="width: 140px; height: 42px;" class="fw-bold btn text-light rounded-pill my-5 ">Register Now</a>
+            <p class="mx-3 section-p fw-bold"><u>The Financial Friend Everyone Needs</u></p>
+            <a href="#" style="width: 135px; height: 42px;" class="fw-bold btn text-light rounded-pill my-5 ">Register Now</a>
             </div>
         </div>
     </section>
 
     <section id="section">
-        <div style="max-width: 400px;" class="section-div section-div2 float-right pt-5 mx-5 text-center d-block">
+        <div style="max-width: 400px;" class="section-div section-div2 float-end pt-5 mx-5 text-center d-block">
             <h3 style="text-shadow: 14px 9px 2px rgba(138, 98, 46, 0.5);" class="text-light fs-1 fw-bold">Easily Make Transfer <br> <span class="d-inline-block">to</span> <br> Friends and Family</h3>
             <a href="#" style="width: 130px;" class="fw-bold btn bg-warning fs-5 text-light rounded-pill my-3 text-center mt-1">Sign Up</a>
         </div>
@@ -134,23 +120,25 @@
 
 <footer class="text-light fw-bold">
     <div class="maindiv d-flex justify-content-between">
-        <div class="mt-4 footer-img-div">
-            <img width="80" height="80" src="assets/img/logo.png" alt="logo">
-            <h3 class="footer-h3 text-light fs-6 mt-3 mx-3">Safety-Net</h3>
+        <div class="navbar-brand mt-4 ">
+            <a class="navbar-brand footer-navbar-brand" href="#">
+                <img width="80" height="80" src="assets/img/logo.png" alt="logo">
+                <h1 class="footer-h1 text-light mt-3 mx-3 fs-4">Safety-Net</h1>  
+            </a>
         </div>
     
-        <div style="display: flex;" class="mx-3  mb-5 div">
+        <div style="display: flex;" class="mb-5 mx-3 div">
             <nav style="margin-right: 180px;" class="nav navbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a href="#" class="nav-link text-light mt-3">Shortcut</a></li>
-                    <li class="nav-item"><a href="login.php" class="nav-link text-light">Login</a></li>
-                    <li class="nav-item"><a href="registration.php" class="nav-link text-light">Register</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-light">Contact Us</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-light mt-3" active>Shortcut</a></li>
+                    <li class="nav-item"><a href="login.php" class="nav-link text-light active">Login</a></li>
+                    <li class="nav-item"><a href="registration.php" class="nav-link text-light active">Register</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-light active">Contact Us</a></li>
                 </ul>
             </nav>
         
             <div>
-                <p style="max-width: 200px;" class="div-p navbar navbar-text mt-4"><span style="position: absolute; right: 190px;" class="d-inline-block">Address: </span>62 Gado Nasko Road, Opposite RCCG Power House, Kubwa, Abuja, Nigeria</span></p>
+                <p style="max-width: 200px;" class="div-p navbar navbar-text"><span style="position: relative; right: 80px; top: 23px;" class="d-inline-block">Address: </span>62 Gado Nasko Road, Opposite RCCG Power House, Kubwa, Abuja, Nigeria</span></p>
             </div>
         </div>
     </div>
@@ -158,3 +146,9 @@
     <p class="text-light text-center d-block mt-5 pb-3">Copyright &copy; 2021 Safety-Net</p>
 </footer>
 </html>
+
+
+
+
+
+    
