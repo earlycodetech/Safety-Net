@@ -17,7 +17,7 @@
                                    
                             </li>
                             <li class="nav-link">
-                                <a href="#" aria-expanded="true"><i class=""></i>
+                                <a href="update" aria-expanded="true"><i class=""></i>
                                     <i class="fas fa-user  "></i>
                                     <span>Account Update</span>
                                 </a>
