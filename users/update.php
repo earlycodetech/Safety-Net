@@ -72,6 +72,42 @@
             <?php echo successMessage(); echo errorMessage();?>
 
                 <div class="card p-3 my-3 border border-primary">
+<style>
+    .profpic{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+    @media (max-width:680px) {
+        .profpic{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    }
+</style>
+                    <div class="row">
+                        <div class="col-7"></div>
+                        <div class="col-5">
+                            <form action="../assets/controls/upload_prof_pic.php" method="POST" enctype="multipart/form-data">
+                                <label for="profPic" class="form-label">
+                                    <img src="../assets/img/profpic/<?php
+                                        if (empty($row['prof_pic'])) {
+                                           echo 'user.png';
+                                        }else {
+                                            echo $row['prof_pic'].'?'.mt_rand();
+                                        }
+                                    ?>" alt="prof-pic"  class="profpic">
+                                </label>
+                                <input type="file" name="img" class="form-control" id="profPic">
+                                <div class="text-end my-2">
+                                    <button type="submit" name="upload" class="btn btn-primary btn-sm rounded-pill">
+                                        <i class="fas fa-arrow-circle-up"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                    <form action="../assets/controls/update_control.php" method="POST">
                         <div class="row mt-3">
                             <div class="col-md-3 my-2">

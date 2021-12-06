@@ -45,16 +45,16 @@
 </head>
 
 <style>
-    .profpic{
-        width: 100px;
-        height: 100px;
-        margin-left: 200px;
+   .profpic{
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
     }
-
-    @media (max-width:640px){
+    @media (max-width:680px) {
         .profpic{
-            margin-left: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
         }
     }
 </style>
@@ -76,9 +76,15 @@
 
                     <!-- Row of prof pic start--> 
                     <div class="row mt-5">
-                        <div class="col-6"></div>
-                        <div class="col-6 my-4">
-                            <img src="../assets/img/profpic/user.png" alt="prof"class="shadow-lg profpic">
+                        <div class="col-8"></div>
+                        <div class="col-4 my-4">
+                            <img src="../assets/img/profpic/<?php
+                                        if (empty($row['prof_pic'])) {
+                                           echo 'user.png';
+                                        }else {
+                                            echo $row['prof_pic'].'?'.mt_rand();
+                                        }
+                                    ?>" alt="prof"class="shadow-lg profpic">
                         </div>
                     </div>
                     <!-- Row of prof pic ends--> 

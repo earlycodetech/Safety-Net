@@ -27,7 +27,15 @@
        
 
         // check if password and confirm password are the same
-       if ($_POST['pass'] != $_POST['conpass']) {
+        $sql ="SELECT * FROM users WHERE email= '$email'";
+        $query = mysqli_query($connect,$sql);
+        $row = mysqli_num_rows($query);
+            
+        if ($row > 0) {
+            $_SESSION['errormessage'] = 'This email already exists!';
+            header('Location: ../../registration');
+        }
+       elseif ($_POST['pass'] != $_POST['conpass']) {
             $_SESSION['errormessage'] = 'Passwords do not match';
             header('Location: ../../registration');
        }
