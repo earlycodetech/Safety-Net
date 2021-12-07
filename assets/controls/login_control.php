@@ -41,6 +41,7 @@
                 if (password_verify($password,$password_returned)) {//check if passwords match
 
                     $_SESSION['id'] = $row['id']; //collect the unique id of the user
+                    $_SESSION['role'] = $row['roles']; //collect the unique id of the user
                     $_SESSION['successmessage'] = 'Welcome '.$row['first_name'].' !';
                     header('Location:../../users/dashboard');
                 }else{
