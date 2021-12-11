@@ -23,6 +23,7 @@
                                 </a>
                             </li>
                             <li class="nav-link">
+                               <?php if ($_SESSION['role'] === 'user') {?>
                                 <a href="#" aria-expanded="true"><i class=""></i>
                                     <i class="fas fa-money-bill-alt"></i>
                                     <span>Deposit</span>
@@ -40,6 +41,30 @@
                                     <span>Transfer</span>
                                 </a>
                             </li>
+                            <!-- User Ends Here -->
+                                <?php }else{ ?>
+                                    <a href="#" aria-expanded="true"><i class=""></i>
+                                    <i class="fas fa-money-bill-alt"></i>
+                                    <span>Users Deposits</span>
+                                </a>
+                            </li> 
+
+                            <li class="nav-link">
+                                <a href="#" aria-expanded="true"><i class=""></i>
+                                    <i class="fas fa-money-check-alt"></i>
+                                    <span>User Withdrawals</span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="#" aria-expanded="true"><i class=""></i>
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>Transfer Logs</span>
+                                </a>
+                            </li>
+                                <?php } ?>
+                          
+                           
+                           
                             <li class="nav-link">
                                 <a href="#" aria-expanded="true"><i class=""></i>
                                     <i class="fas fa-cog"></i>

@@ -22,6 +22,7 @@
        $dob = $_POST['dob'];
        $state = $_POST['state'];
        $phone = $_POST['phone'];
+       $role = 'user';
        $password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
        $date = date('Y-m-d');
        
@@ -58,10 +59,10 @@
        else{
             /*Inserting to the database */
 
-            $sql = "INSERT INTO users(users_id,first_name,last_name,other_name,email,dob,states,phone,password,date_created) VALUES(?,?,?,?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO users(users_id,first_name,last_name,other_name,email,dob,states,phone,password,roles,date_created) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
             $stmt = mysqli_stmt_init($connect);
             mysqli_stmt_prepare($stmt,$sql);
-            mysqli_stmt_bind_param($stmt,'ssssssssss',$usersid,$firstname,$lastname,$othername,$email,$dob,$state,$phone,$password,$date);
+            mysqli_stmt_bind_param($stmt,'sssssssssss',$usersid,$firstname,$lastname,$othername,$email,$dob,$state,$phone,$password,$role,$date);
             $execute = mysqli_stmt_execute($stmt);
 
             if ($execute) {

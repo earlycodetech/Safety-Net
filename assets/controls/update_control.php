@@ -69,3 +69,13 @@
             }
          }
     }
+    if (isset($_GET['del'])) {
+     $del = $_GET['del'];
+
+     $sql = "DELETE FROM users WHERE id = '$del'";
+     $query = mysqli_query($connect,$sql);
+     if ($query) {
+         $_SESSION['successmessage'] = 'User Records Deleted Successfully';
+         header('Location: ../../users/dashboard');
+     }
+  }

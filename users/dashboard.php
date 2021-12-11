@@ -15,6 +15,8 @@
             get_result
             fetch_assoc
     */
+
+   
      $sql = "SELECT * FROM users WHERE id= '$id'";
      $stmt = mysqli_stmt_init($connect);
      mysqli_stmt_prepare($stmt,$sql);
@@ -94,9 +96,11 @@
             <div class="container">
                    
             
-            <?php echo successMessage(); ?>
+            <?php echo successMessage(); 
+            ?>
 
-                    <!-- Row of prof pic start--> 
+                    <!-- Row of prof pic start-->
+                    <?php if ($_SESSION['role'] === 'user') {?> 
                     <div class="row mt-5">
 <<<<<<< HEAD
                         <div class="col-6"></div>
@@ -242,8 +246,97 @@
                             </div>
                         </div>
                     </div>
-                
-                
+
+<!--///////////////////////// USERS SECTIONS ENDS HERE ////////////////////////////////////////////////////////////// -->
+                <?php }else {?>
+                        <div class="card p-3 text-warning">
+                            <div class="row">
+                                <div class="col-9"></div>
+                                <div class="col-3">
+                                    <div class="card shadow-lg p-2">
+                                        <h3 class="fw-bold">Total Users</h3>
+
+                                        <p class="pt-3 fw-bold">
+                                            <i class="fas fa-users"></i>
+                                            <?php
+                                                $sql = "SELECT * FROM users WHERE roles= 'user'";
+                                                $query = mysqli_query($connect,$sql);
+                                                $users = mysqli_num_rows($query);
+                                                echo $users;
+                                            ?>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!-- ENd of total users div -->
+                            
+
+                            <div class="table-responsive mt-5">
+                            <table class="table table-bordered table-hover">
+                                <thead class="table-warning text-dark">
+                                    <tr>
+                                    <th scope="col">User ID</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Option</th>
+                                    </tr>
+                                </thead>
+
+
+                                <tbody>
+                                <?php
+                                    $sql = "SELECT * FROM users WHERE roles= 'user' ORDER BY id DESC LIMIT 0,10";
+                                    $query = mysqli_query($connect,$sql);
+                                    while ($userRow = mysqli_fetch_assoc($query)) {
+                                ?>
+                                   
+                                   <tr>
+                                       <td><?php echo $userRow['users_id']; ?></td>
+                                       <td><?php echo $userRow['first_name']; ?></td>
+                                       <td><?php echo $userRow['last_name']; ?></td>
+                                       <td class="text-center">
+                                           <a href="view?user=<?php echo $userRow['users_id']; ?>" class="btn btn-primary">
+                                               <i class="fas fa-eye text-light"></i>
+                                           </a>
+
+
+                                                                            <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="fas fa-trash text-light"></i>
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                        <h5 class="text-warning py-4">
+                                            Are you sure?
+                                        </h5>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+
+                                        <a href="../assets/controls/update_control?del=<?php echo $userRow['id']; ?>" class="btn btn-danger">
+                                                Yes
+                                               </a>
+                                        </div>
+                                        
+                                        </div>
+                                        </div>
+                                        </div>
+                                          
+                                       </td>
+                                   </tr>
+                                   <?php } ?>
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    <?php } ?>
                     </div>
             </div>
         <!-- main content area end -->
