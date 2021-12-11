@@ -170,31 +170,31 @@
                     <h4 class="text-center text-warning">
                         Update Bank Details
                     </h4>
-                    <form action="" method="post">
+                    <form action="../assets/controls/update_control.php" method="post">
                         <div class="row p-1">
                             <div class="col-md-3 my-2">
                                 <label  class="form-label fw-bold text-warning fs-5">Bank Name:</label>
                             </div>
                             <div class="col-md-9 my-2">
-                                <input type="text" class="form-control bg-warning">
+                                <input type="text" name="bankName" class="form-control bg-warning" required>
                             </div>
 
                             <div class="col-md-3 my-2">
                                 <label  class="form-label fw-bold text-warning fs-5">Account Name:</label>
                             </div>
                             <div class="col-md-9 my-2">
-                                <input type="text" class="form-control bg-warning">
+                                <input type="text" name="accountName" class="form-control bg-warning" required>
                             </div>
 
                             <div class="col-md-3 my-2">
                                 <label  class="form-label fw-bold text-warning fs-5">Account Number:</label>
                             </div>
                             <div class="col-md-9 my-2">
-                                <input type="text" class="form-control bg-warning">
+                                <input type="text" name="accountNumber" class="form-control bg-warning" required>
                             </div>
 
                             <div class="col-md-12 my-1">
-                                    <button type="submit" class="btn btn-warning text-light">Add Bank Details</button>
+                                    <button type="submit" name="updateBank" class="btn btn-warning text-light">Add Bank Details</button>
                             </div>
                         </div>
                     </form>

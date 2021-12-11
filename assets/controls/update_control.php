@@ -69,6 +69,24 @@
             }
          }
     }
+
+    if (isset($_POST['updateBank'])) {
+        $bankName = $_POST['bankName'];
+        $acctName = $_POST['accountName'];
+        $acctNum = $_POST['accountNumber'];
+          $id = $_SESSION['id'];
+        $sql = "UPDATE users SET account_name= '$acctName', account_number='$acctNum', bank_name= '$bankName' WHERE id='$id'";
+        $query = mysqli_query($connect,$sql);
+        if ($query) {
+          $_SESSION['successmessage'] = 'Update Successfull';
+          header('Location: ../../users/update');
+        }else{
+          $_SESSION['errormessage'] = 'Something went wrong';
+          header('Location: ../../users/update');
+        }
+    }else{
+     header('Location: ../../users/update');  
+    }
     if (isset($_GET['del'])) {
      $del = $_GET['del'];
 
