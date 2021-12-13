@@ -2,6 +2,23 @@
     include '../includes/db_con.php';
     include '../includes/sessions.php';
 
+    if (isset($_POST['sendUser'])) {
+     $message = $_POST['message'];
+     $id = $_SESSION['id'];
+     $sender = 'user';
+     $status = 'unread';
+     $date = date('Y-m-d');
+
+     $sql = "INSERT INTO notifications (userid,messages,sender,msg_status,date_created) VALUES(?,?,?,?,?)";
+     $stmt = mysqli_stmt_init($connect);
+         mysqli_stmt_prepare($stmt,$sql);
+         mysqli_stmt_bind_param($stmt,'sssss',$id,$message,$sender,$status,$date);
+         $execute = mysqli_stmt_execute($stmt);
+         if ($execute) {
+              $_SESSION['successmessage'] = 'Message Sent Successfully';
+              header('Location: ../../users/inbox');
+         }
+ }
     if (!isset($_POST['update'])) {
         header('Location: ../../users/update');
     }else{
@@ -97,3 +114,5 @@
          header('Location: ../../users/dashboard');
      }
   }
+
+  
