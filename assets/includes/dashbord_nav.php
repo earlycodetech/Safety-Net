@@ -17,6 +17,34 @@
                                    
                             </li>
                             <li class="nav-link">
+                                <a href="inbox" class="text-white ">
+                                    <i class="fas fa-bell pe-3"></i>Inbox
+
+                                    <?php 
+                                        if ($_SESSION['role'] === 'user') {
+                                        $sql = "SELECT * FROM notifications WHERE msg_status= 'unread' AND userid ='$id' AND sender='admin'";
+                                        $query = mysqli_query($connect,$sql);
+                                        $unread = mysqli_num_rows($query);
+                                        if ($unread > 0) {
+                                    ?>
+                                    <span class="position-absolute top-0 end-25 translate-middle badge rounded-pill bg-danger">
+                                        <?php echo $unread; ?>
+                                    <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                    <?php }}else{
+                                         $sql = "SELECT * FROM notifications WHERE msg_status= 'unread' AND sender='user'";
+                                         $query = mysqli_query($connect,$sql);
+                                         $unread = mysqli_num_rows($query);
+                                         if ($unread > 0) {
+                                    ?>
+                                    <span class="position-absolute top-0 end-25 translate-middle badge rounded-pill bg-danger">
+                                        <?php echo $unread; ?>
+                                    <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                    <?php }} ?>
+                                </a>
+                            </li>
+                            <li class="nav-link">
                                 <a href="update" aria-expanded="true"><i class=""></i>
                                     <i class="fas fa-user  "></i>
                                     <span>Account Update</span>
@@ -72,7 +100,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-link">
+                            <li class="nav-link d-lg-none">
                                 <a href="../assets/controls/logout_control.php" aria-expanded="true"><i class=""></i>
                                     <i class="fas fa-sign-out-alt"></i>
                                     <span>Log out</span>
@@ -90,13 +118,18 @@
             <div class="header-area" style="background-color: #F68D41;" >
                 <div class="row align-items-center">
                     <!-- nav and search button -->
-                    <div class="col-md-6 col-sm-8 clearfix">
+                    <div class="col-md-6 col-sm-8 clearfix d-flex justify-content-between">
                         <div class="nav-btn pull-left">
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
-                      
+                        <div class="ms-auto d-lg-block d-none">
+                             <a href="../assets/controls/logout_control.php" aria-expanded="true"><i class=""></i>
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Log out</span>
+                                </a>
+                        </div>
                     </div>
                 </div>
             </div>
