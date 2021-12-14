@@ -49,6 +49,9 @@
                     header('Location:../../login');
                 }
                 
+            }else {
+                $_SESSION['errormessage'] = 'This user does not exist..';
+                header('Location:../../login');
             }
         }
     }

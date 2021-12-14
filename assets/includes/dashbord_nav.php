@@ -125,9 +125,9 @@
                             <span></span>
                         </div>
                         <div class="ms-auto d-lg-block d-none">
-                             <a href="../assets/controls/logout_control.php" aria-expanded="true"><i class=""></i>
+                             <a href="../assets/controls/logout_control.php" aria-expanded="true"><i class="text-white"></i>
                                     <i class="fas fa-sign-out-alt"></i>
-                                    <span>Log out</span>
+                                    <span class="text-white">Log out</span>
                                 </a>
                         </div>
                     </div>

@@ -20,6 +20,16 @@
      $result = mysqli_stmt_get_result($stmt);
      $row = mysqli_fetch_assoc($result);
 
+
+     if (isset($_GET['del'])) {
+       $del_id = $_GET['del'];
+       $sql = "DELETE FROM notifications WHERE mesg_id= '$del_id'";
+       $query = mysqli_query($connect,$sql);
+       if ($query) {
+          header('Location:inbox');
+       }
+     }
+
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -124,13 +134,57 @@
                 </table>
     </div>
 
-<?php }else{?>
+<?php }if($_SESSION['role'] === 'admin'){?>
 
 
 <!-- ADMIN -->
+<div class="table-responsive mt-5">
+        <div class="text-end">
+            <a href="inbox?send" class="btn btn-primary my-2">Compose</a>
+        </div>
+                <table class="table">
+                        <thead class="table-dark text-white">
+                            <tr>
+                            <th scope="col"><i class="fas fa-envelope"></i></th>
+                            <th scope="col">Message</th>
+                            <th scope="col">User</th>
+                            <th scope="col visually-hidden"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                            $num = 1;
+                                $sql = "SELECT * FROM notifications WHERE msg_status = 'unread' AND sender='user' ORDER BY mesg_id DESC";
+                                $query = mysqli_query($connect,$sql);
+                                while ($ms = mysqli_fetch_assoc($query)) {
+                            ?>
+                            <tr>
+                                <td><?php echo $num++; ?></td>
+                                <td><?php echo substr($ms['messages'],0,10).".........."; ?></td>
+                                <td>
+                                    <?php 
+                                        $uid = $ms['userid'];
+                                        $nameCmd = "SELECT * FROM users WHERE id= '$uid'";
+                                        $nameQury = mysqli_query($connect,$nameCmd);
+                                        $name = mysqli_fetch_assoc($nameQury);
+                                        echo $name['first_name'];
+                                    ?>
+                                </td>
+                                <td>
+                                    <a href="inbox?read=<?php echo $ms['mesg_id']; ?>" class="btn btn-transperent">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="inbox?del=<?php echo $ms['mesg_id']; ?>" class="btn btn-transperent">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                </table>
+    </div>
 
-
-<?php}}else {
+<?php }}else {
         if (isset($_GET['read'])) {
             $read = $_GET['read'];
             $update = "UPDATE notifications SET msg_status='read' WHERE mesg_id = '$read'";
@@ -162,10 +216,24 @@
         </div>
         
         <form action="../assets/controls/update_control.php" method="post">
+
             <textarea name="message" class="form-control" placeholder="Hello, what can we do for you today"></textarea>
 
             <div class="text-end my-3">
-                <button type="submit" name="sendUser" class="btn btn-info"> <i class="fas fa-envelope"></i> </button>
+                <?php if ($_SESSION['role'] === 'user') {?>
+                    <button type="submit" name="sendUser" class="btn btn-info"> <i class="fas fa-envelope"></i> </button>
+                <?php }else{ ?>
+                <select name="userid" class="form-select my-3 w-25">
+                    <?php 
+                        $sql = "SELECT * FROM users WHERE roles = 'user'";
+                        $query = mysqli_query($connect,$sql);
+                        while ($users = mysqli_fetch_assoc($query)){
+                    ?>
+                        <option value="<?php echo $users['id']; ?>"><?php echo $users['first_name']." ".$users['last_name']; ?></option>
+                    <?php } ?>
+                </select>
+                <button type="submit" name="sendAdmin" class="btn btn-danger"> <i class="fas fa-envelope"></i> </button>
+                <?php } ?>
             </div>
         </form>
 
